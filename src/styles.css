@@ -24,10 +24,15 @@ button {
   font: inherit;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
 .app-shell {
   display: grid;
   min-height: 100vh;
-  place-items: center;
+  align-items: center;
   padding: 24px;
 }
 
@@ -35,6 +40,7 @@ button {
   display: grid;
   width: min(100%, 440px);
   gap: 18px;
+  margin: 0 auto;
 }
 
 .brand {
@@ -61,6 +67,13 @@ button {
   gap: 12px;
 }
 
+.connection-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 10px;
+}
+
 .primary-action,
 .secondary-action {
   min-height: 56px;
@@ -78,4 +91,220 @@ button {
 .secondary-action {
   background: #ffffff;
   color: #1b2b21;
+}
+
+.status-error {
+  margin: 0;
+  color: #9c1d20;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.host-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.host-panel div {
+  display: grid;
+  min-height: 72px;
+  align-content: center;
+  gap: 6px;
+  border: 1px solid #d7ded7;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 12px;
+}
+
+.metric-label {
+  color: #526057;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.host-panel strong {
+  overflow: hidden;
+  color: #14221a;
+  font-size: 1.1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-action {
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: #7d1d23;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.discovery-panel {
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid #d7ded7;
+  padding-top: 16px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel-heading div {
+  display: grid;
+  gap: 5px;
+}
+
+.panel-heading strong {
+  color: #14221a;
+}
+
+.small-action {
+  min-height: 38px;
+  border: 1px solid #1b2b21;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1b2b21;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0 12px;
+}
+
+.host-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.host-list li {
+  display: grid;
+  gap: 4px;
+  border: 1px solid #d7ded7;
+  border-radius: 8px;
+  background: #ffffff;
+  list-style: none;
+  padding: 12px;
+}
+
+.host-list strong,
+.host-list span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.host-list strong {
+  color: #14221a;
+}
+
+.host-list span {
+  color: #526057;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  margin: 0;
+  color: #526057;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.pairing-panel {
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid #d7ded7;
+  padding-top: 16px;
+}
+
+.qr-image {
+  width: min(100%, 240px);
+  aspect-ratio: 1;
+  border: 1px solid #d7ded7;
+  border-radius: 8px;
+  background: #ffffff;
+  justify-self: center;
+}
+
+.payload-box {
+  width: 100%;
+  min-height: 92px;
+  resize: vertical;
+  border: 1px solid #bfcabf;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #18201c;
+  font: inherit;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  padding: 10px;
+}
+
+.field-label {
+  display: grid;
+  gap: 6px;
+  color: #526057;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.field-label select {
+  min-height: 44px;
+  border: 1px solid #bfcabf;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #18201c;
+  font: inherit;
+  padding: 0 10px;
+}
+
+.field-label input {
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid #bfcabf;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #18201c;
+  font: inherit;
+  padding: 0 10px;
+  text-transform: none;
+}
+
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.small-danger {
+  min-height: 38px;
+  border: 1px solid #9c1d20;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #9c1d20;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0 12px;
+}
+
+#pairing-scanner {
+  overflow: hidden;
+  border: 1px solid #d7ded7;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+@media (max-width: 420px) {
+  .connection-panel {
+    grid-template-columns: 1fr;
+  }
 }

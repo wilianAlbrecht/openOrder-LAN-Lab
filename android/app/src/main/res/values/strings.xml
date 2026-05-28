@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">OpenOrder LAN Lab</string>
+    <string name="title_activity_main">OpenOrder LAN Lab</string>
+    <string name="package_name">com.openorder.lanlab</string>
+    <string name="custom_url_scheme">com.openorder.lanlab</string>
+</resources>
